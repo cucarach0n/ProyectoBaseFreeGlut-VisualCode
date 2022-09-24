@@ -33,7 +33,6 @@ void display() {
 	glPopMatrix();
 
 	glPushMatrix();
-	glScalef(0.5f,0.5f,0.5f);
 		glTranslatef (0.0f, -0.5f, 0.0f);
 		glBegin (GL_QUADS); // Cada conjunto de 4 vértices forma un quad
 			glColor3f (1.0f, 0.0f, 1.0f); // Rojo

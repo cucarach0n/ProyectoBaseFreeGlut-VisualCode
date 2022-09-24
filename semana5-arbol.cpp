@@ -11,19 +11,19 @@ void mover(void)
     glTranslated(0,0,zoom);
     glRotated(girax,1.0,0.0,0.0);
     glRotated(giray,0.0,1.0,0.0);
-    }
-    //Malla y ejes
-    void creaMalla(void)
-    {
+}
+//Malla y ejes
+void creaMalla(void)
+{
     int i, long_eje=10;
     glColor3f(0.01, 0.6, 0.98);
     glBegin(GL_LINES);
     for(i=-long_eje; i<=long_eje; i++)
     {
-    glVertex3f(i, -long_eje, 0);
-    glVertex3f(i, long_eje, 0);
-    glVertex3f(-long_eje, i, 0);
-    glVertex3f(long_eje, i, 0);
+        glVertex3f(i, -long_eje, 0);
+        glVertex3f(i, long_eje, 0);
+        glVertex3f(-long_eje, i, 0);
+        glVertex3f(long_eje, i, 0);
     }
     glEnd();
 }
@@ -63,6 +63,8 @@ void dibuja(void)
     gluQuadricDrawStyle(cilindro,GLU_POINT);
     gluCylinder(cilindro,1,1,5,20,20);
     glPopMatrix();
+
+    
     glPushMatrix();
     mover();
     if (malla) creaMalla();
