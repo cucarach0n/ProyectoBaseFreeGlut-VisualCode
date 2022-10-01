@@ -4,7 +4,7 @@
         {
             "label": "echo",
             "type": "shell",
-            "command": "c:\\mingw64\\bin\\g++",
+            "command": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\g++",
             "args": [
                 "-g",
                 "testGlut.cpp",
