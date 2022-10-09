@@ -48,10 +48,10 @@ glRotated(-30.0, 0.0, 1.0, 0.0);
 glPushMatrix();
 //Aplicando el setMaterial
 
-glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
-glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
-glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
-glMaterialfv(GL_FRONT, GL_SHININESS, shine); 
+//(GL_FRONT, GL_AMBIENT, mat_ambient);
+//(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+//(GL_FRONT, GL_SPECULAR, mat_specular);
+//(GL_FRONT, GL_SHININESS, shine); 
 glColor3f(1.0,1.0,0.0);
 glutSolidTeapot(125.0);
 glFlush();

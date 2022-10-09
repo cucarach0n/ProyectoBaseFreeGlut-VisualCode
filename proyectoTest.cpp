@@ -1,3 +1,4 @@
+#include<iostream>
 #include <stdio.h>
 #include <math.h>
 #include <GL/freeglut.h>
@@ -19,8 +20,501 @@ int eye_camX = 0, eye_camY = 0, eye_camZ = 0;
 float posX = 10, posY = 0, posZ = 10;
 
 float x=30,y=30,z=50;
-///////////////////////////////////////////////////////////////////
 
+///////Silla/////////////////////
+void silla(){
+
+    //espaldar	
+    glPushMatrix();
+        //glTranslatef(-50.0,-50.0,50.0);
+        glScalef(35.0,35.0,3.0);
+        glColor3f(0.8078f,0.2157f,0.2235f);
+        glutSolidCube(1);
+    glPopMatrix();
+
+    //palo espaldar
+    glPushMatrix();
+        glTranslatef(0.0,-20.0,0.0);
+        glScalef(5.0,20.0,3.0);
+        glColor3f(0.8941f,0.8471f,0.8314f);
+        glutSolidCube(1);
+    glPopMatrix();
+
+    //base
+    glPushMatrix();
+        glTranslatef(0.0,-30.0,-15.0);
+        glScalef(35.0,5.0,30.0);
+        glColor3f(0.8078f,0.2157f,0.2235f);
+        glutSolidCube(1);
+    glPopMatrix();
+
+
+    //palo central de base
+    glPushMatrix();
+        glTranslatef(0.0,-45.0,-15.0);
+        glScalef(3.0,30.0,3.0);
+        glColor3f(0.8941f,0.8471f,0.8314f);
+        glutSolidCube(1);
+    glPopMatrix();
+
+    //base rueda 1
+    glPushMatrix();
+        glTranslatef(0.0,-60.0,-15.0);
+        glScalef(3.0,3.0,30.0);
+        glColor3f(0.3176f,0.3176f,0.3176f);
+        glutSolidCube(1);
+    glPopMatrix();
+
+    //base rueda 2 
+    glPushMatrix();
+        glTranslatef(0.0,-60.0,-15.0);
+        glScalef(30.0,3.0,3.0);
+        glColor3f(0.3176f,0.3176f,0.3176f);
+        glutSolidCube(1);
+    glPopMatrix();
+
+    //ruedas
+    glPushMatrix();
+        glTranslatef(12.0,-63.0,-15.0);
+        glColor3f(0.1490f,0.1490f,0.1490f);
+        glutSolidSphere(3.0,5,5);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-12.0,-63.0,-15.0);
+        glColor3f(0.1490f,0.1490f,0.1490f);
+        glutSolidSphere(3.0,5,5);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(0.0,-63.0,-3.0);
+        glColor3f(0.1490f,0.1490f,0.1490f);
+        glutSolidSphere(3.0,5,5);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(0.0,-63.0,-27.0);
+        glColor3f(0.1490f,0.1490f,0.1490f);
+        glutSolidSphere(3.0,5,5);
+    glPopMatrix();
+
+}
+
+/////fin silla////////////////////
+
+
+//////////////BANO///////////////
+void PISO_BANIO(){
+	//PISO DEL BA�O
+	glPushMatrix();
+		glColor3f(0.2, 0.1, 0.63);
+		glTranslatef(-7.5,-15.0,6.15);//glTranslatef(-7.5,-16.905,6.15);
+		glScalef(4.9,3.0,0.20);//glScalef(4.9,4.9,0.20);
+		glutSolidCube(2.0);
+	glPopMatrix();
+}
+
+void PAREDES_BANIO(){
+	
+	//PARED DERECHA
+	glPushMatrix();
+		glColor3f(0.4, 0.4, 0.63);
+		glTranslatef(-7.425,-11.86,9.65);
+		glScalef(4.675,0.15,3.5);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//PARED FRENTE
+	glPushMatrix();
+		glColor3f(0.4, 0.4, 0.63);
+		glTranslatef(-2.75,-19.13,9.725);
+		glScalef(0.15,2.675,3.425);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.4, 0.4, 0.63);
+		glTranslatef(-2.75,-14.705,12.74);
+		glScalef(0.15,1.75,0.41);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.4, 0.4, 0.63);
+		glTranslatef(-2.75,-12.482,9.725);
+		glScalef(0.15,0.472,3.425);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//PUERTA
+		//Madera
+    
+    glPushMatrix();
+        glRotatef(-30,0,0,1);
+        glTranslatef(6.7,0.4,0.0);
+        glPushMatrix();
+            glColor3f(0.1, 0.2, 0.7);
+            glTranslatef(-2.0805,-14.628,9.3341);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(1.75,0.052,3.0);
+            glutSolidCube(2.0);
+        glPopMatrix();
+            //Detalle 1
+        glPushMatrix();
+            glColor3f(0.1, 0.4, 0.4);
+            glTranslatef(-2.0134,-14.628,9.3341);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(1.5,0.0,2.8);
+            glutSolidCube(2.0);
+        glPopMatrix();
+            //Detalle 2
+        glPushMatrix();
+            glColor3f(0.1, 0.4, 0.4);
+            glTranslatef(-2.0108,-14.622,10.884);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(1.15,0.0,1.0);
+            glutSolidCube(2.0);
+        glPopMatrix();
+            //Detalle 3
+        glPushMatrix();
+            glColor3f(0.1, 0.4, 0.4);
+            glTranslatef(-2.0108,-14.622,7.8341);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(1.150,0.0,1.0);
+            glutSolidCube(2.0);
+        glPopMatrix();
+        //MANIJA
+            //DETALLE 1
+        glPushMatrix();
+            glColor3f(0.56, 0.4, 0.4);
+            glTranslatef(-1.7344,-15.637,9.3341);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(0.150,0.0,0.15);
+            glutSolidCube(2.0);
+        glPopMatrix();
+            //DETALLE 2
+        glPushMatrix();
+            glColor3f(0.56, 0.2, 0.4);
+            glTranslatef(-1.6348,-15.629,9.3341);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(0.05,0.1,0.05);
+            glutSolidCube(2.0);
+        glPopMatrix();
+            //DETALLE 3
+        glPushMatrix();
+            glColor3f(0.56, 0.2, 0.4);
+            glTranslatef(-1.585,-15.624,9.1841);
+            glRotatef(285.0,0.0,0.0,1.0);
+            glScalef(0.05,0.05,0.1);
+            glutSolidCube(2.0);
+        glPopMatrix();
+    glPopMatrix();
+}
+
+void WATER_BANIO(){
+	//TAPA
+	glPushMatrix();
+		glColor3f(0.1, 0.2, 0.6);
+		glTranslatef(-11.47,-15.52,7.9);
+		glScalef(0.1,0.6,0.6);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//ASIENTO
+	glPushMatrix();
+		glColor3f(0.3, 0.2, 0.6);
+		glTranslatef(-10.92,-15.52,7.05);
+		glScalef(0.65,0.65,0.25);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//ASIENTO
+	glPushMatrix();
+		glColor3f(0.4, 0.2, 0.6);
+		glTranslatef(-10.92,-15.52,7.05);
+		glScalef(0.65,0.65,0.25);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.6, 0.2, 0.6);
+		glTranslatef(-10.921,-15.52,6.6);
+		glScalef(0.4,0.3,0.2);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.7, 0.2, 0.6);
+		glTranslatef(-10.921,-15.52,6.35);
+		glScalef(0.65,0.65,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+}
+
+void BASURERO_BANIO(){
+	//TAPA 1
+	glPushMatrix();
+		glColor3f(0.1, 0.1, 0.6);
+		glTranslatef(-10.65,-13.86,6.65);
+		glScalef(0.0,0.35,0.35);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//TAPA 2
+	glPushMatrix();
+		glColor3f(0.1, 0.1, 0.6);
+		glTranslatef(-11.35,-13.86,6.65);
+		glScalef(0.0,0.35,0.35);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//TAPA 3
+	glPushMatrix();
+		glColor3f(0.1, 0.1, 0.6);
+		glTranslatef(-11,-13.51,6.65);
+		glScalef(0.35,0.0,0.35);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//TAPA 4
+	glPushMatrix();
+		glColor3f(0.1, 0.1, 0.6);
+		glTranslatef(-11,-14.21,6.65);
+		glScalef(0.35,0.0,0.35);
+		glutSolidCube(2.0);
+	glPopMatrix();
+}
+
+void LAVADERO_BANIO(){
+	//CANIO
+	glPushMatrix();
+		glColor3f(0.14, 0.5, 0.6);
+		glTranslatef(-6.99,-12.76,9.05);
+		glScalef(0.1,0.25,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.14, 0.5, 0.6);
+		glTranslatef(-6.99,-12.61,8.9);
+		glScalef(0.1,0.1,0.1);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//DETALLE CANIO
+	glPushMatrix();
+		glColor3f(0.2, 0.5, 0.6);
+		glTranslatef(-6.99,-12.58,8.6);
+		glScalef(0.15,0.15,0.2);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//MANIJA 1
+	glPushMatrix();
+		glColor3f(0.2, 0.2, 0.6);
+		glTranslatef(-6.56,-12.58,8.5);
+		glScalef(0.1,0.1,0.1);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//MANIJA 2
+	glPushMatrix();
+		glColor3f(0.2, 0.9, 0.6);
+		glTranslatef(-7.41,-12.58,8.5);
+		glScalef(0.1,0.1,0.1);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//LAVAVO
+	glPushMatrix();
+		glColor3f(0.6, 0.9, 0.6);
+		glTranslatef(-6.98,-13.13,8.3);
+		glScalef(0.7,0.7,0.1);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.6, 0.9, 0.6);
+		glTranslatef(-7.02,-12.58,7.3);
+		glScalef(0.15,0.15,0.9);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.6, 0.9, 0.6);
+		glTranslatef(-7.02,-12.62,6.35);
+		glScalef(0.4,0.4,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+}
+
+void DUCHA_BANIO(){
+	//REGADERA
+	glPushMatrix();
+		glColor3f(0.6, 0.2, 0.2);
+		glTranslatef(-11.15,-19.6,11.7);
+		glScalef(0.1,0.1,0.1);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.6, 0.2, 0.2);
+		glTranslatef(-11.357,-19.6,11.85);
+		glScalef(0.3,0.1,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.6, 0.2, 0.2);
+		glTranslatef(-11.55,-19.6,9.05);
+		glScalef(0.1,0.1,2.750);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//MANIJA DERECHA
+	glPushMatrix();
+		glColor3f(0.2, 0.2, 0.2);
+		glTranslatef(-11.6,-19.35,9.13);
+		glScalef(0.05,0.05,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//MANIJA CENTRAL
+	glPushMatrix();
+		glColor3f(0.2, 0.2, 0.2);
+		glTranslatef(-11.7,-19.6,9.13);
+		glScalef(0.05,0.05,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//MANIJA IZQUIERDA
+	glPushMatrix();
+		glColor3f(0.2, 0.2, 0.2);
+		glTranslatef(-11.6,-19.85,9.13);
+		glScalef(0.05,0.05,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//DUCHA
+	glPushMatrix();
+		glColor3f(0.2, 0.1, 0.1);
+		glTranslatef(-8.65,-21.12,7.9);
+		glScalef(2.8,0.05,1.6);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.2, 0.1, 0.1);
+		glTranslatef(-5.8,-19.47,7.9);
+		glScalef(0.05,1.7,1.6);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.2, 0.1, 0.1);
+		glTranslatef(-9.5,-17.82,7.9);
+		glScalef(1.95,0.05,1.6);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.2, 0.1, 0.1);
+		glTranslatef(-8.65,-19.47,6.35);
+		glScalef(2.8,1.6,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//PUERTA CORREDIZA
+	glPushMatrix();
+		glColor3f(0.2, 0.13, 0.13);
+		glTranslatef(-9.25,-17.72,7.9);
+		glScalef(1.95,0.05,1.6);
+		glutSolidCube(2.0);
+	glPopMatrix();
+
+}
+
+void COSAS_BANIO(){
+	//CUADRO
+	/*glPushMatrix();
+		glColor3f(0.1, 0.1, 0.1);
+		glTranslatef(-12.05,-19.6,11.7);
+		glScalef(0.05,1.2,0.65);
+		glutSolidCube(2.0);
+	glPopMatrix();*/
+	
+	//TOALLERO
+	glPushMatrix();
+		glColor3f(0.1, 0.51, 0.1);
+		glTranslatef(-9.8,-12.26,8.81);
+		glScalef(0.4,0.05,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.1, 0.51, 0.1);
+		glTranslatef(-9.35,-12.16,8.81);
+		glScalef(0.05,0.150,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.1, 0.51, 0.1);
+		glTranslatef(-10.25,-12.16,8.81);
+		glScalef(0.05,0.150,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//ESPEJO
+		//MARCO
+	glPushMatrix();
+		glColor3f(0.12, 0.32, 0.12);
+		glTranslatef(-6.97,-12.11,9.84);
+		glScalef(0.850,0.1,0.8);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	glPushMatrix();
+		glColor3f(0.5, 0.5, 0.12);
+		glTranslatef(-6.97,-12.26,9.84);
+		glScalef(0.7,0.05,0.65);
+		glutSolidCube(2.0);
+	glPopMatrix();
+	
+	//TAPETE
+	glPushMatrix();
+		glColor3f(0.12, 0.5, 0.12);
+		glTranslatef(-4.1145,-14.808,6.35);
+		glScalef(1.1,1.35,0.05);
+		glutSolidCube(2.0);
+	glPopMatrix();
+}
+
+void CuartoBanio(){
+    glRotatef(270,1,0,0);
+    glPushMatrix();
+        PISO_BANIO();
+        PAREDES_BANIO();
+        WATER_BANIO();
+        BASURERO_BANIO();
+        LAVADERO_BANIO();
+        //DUCHA_BANIO();
+        COSAS_BANIO();
+    glPopMatrix();
+}
+
+void cuarto(){
+    glPushMatrix();
+        glTranslatef(-1,-2.5,0);
+        glScalef(-0.03,-0.03,-0.03);
+        glRotatef(180,1,0,0);
+        glRotatef(-90,0,1,0);
+        silla();
+    glPopMatrix();
+}
+
+//////////////FIN BANO///////////
 
 void LineaCubo(int x){
 	glPushMatrix();
@@ -694,14 +1188,23 @@ void display() {
 	glRotatef(eye_camZ, 0.0, 0.0, 1.0);
 	
 	glPushMatrix();
-	
+        
 		Alfombra();
 		PisoCuarto();
 		paredDerechaFondo();
 		paredIzquierdaFondo();
 		Puerta();
 		Muebles();
+        
 	glPopMatrix();
+    glPushMatrix();
+        glRotatef(90,0,1,0);
+        glTranslatef(-2.2,-11.15,-17.1);
+        CuartoBanio();
+    glPopMatrix();
+    glPushMatrix();
+        cuarto();
+    glPopMatrix();
 	glFlush();
 	glutSwapBuffers();	
 }
@@ -733,20 +1236,3 @@ int main(int argc, char** argv) {
 	glutMainLoop();
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
