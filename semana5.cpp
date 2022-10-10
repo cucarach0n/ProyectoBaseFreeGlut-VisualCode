@@ -64,25 +64,25 @@ void DibujarToroides(){
 }
 void DibujarCilindros(){
     glPushMatrix();
-    glTranslatef(0,-2.5,0);
-    glPushMatrix();
-    glRotated(-90, 1,0,0);
-    glTranslatef(4,0,0);
-    glRotated(a,0,0,1);
-    cilindro = gluNewQuadric();
-    glColor3f(1, 0, 0);
-    gluQuadricDrawStyle(cilindro,GLU_LINE);
-    gluCylinder(cilindro,1,1,5,20,20);
-    glPopMatrix();
-    glPushMatrix();
-    glRotated(-90, 1,0,0);
-    glTranslatef(8,0,0);
-    glRotated(-a,0,0,1);
-    cilindro = gluNewQuadric();
-    glColor3f(1, 0, 0);
-    gluQuadricDrawStyle(cilindro,GLU_LINE);
-    gluCylinder(cilindro,1,1,5,20,20);
-    glPopMatrix();
+        glTranslatef(0,-2.5,0);
+        glPushMatrix();
+            glRotated(-90, 1,0,0);
+            glTranslatef(4,0,0);
+            glRotated(a,0,0,1);
+            cilindro = gluNewQuadric();
+            glColor3f(1, 0, 0);
+            gluQuadricDrawStyle(cilindro,GLU_LINE);
+            gluCylinder(cilindro,1,1,5,20,20);
+        glPopMatrix();
+        glPushMatrix();
+            glRotated(-90, 1,0,0);
+            glTranslatef(8,0,0);
+            glRotated(-a,0,0,1);
+            cilindro = gluNewQuadric();
+            glColor3f(1, 0, 0);
+            gluQuadricDrawStyle(cilindro,GLU_LINE);
+            gluCylinder(cilindro,1,1,5,20,20);
+        glPopMatrix();
     glPopMatrix();
 }
 void DibujarTeteras(){
